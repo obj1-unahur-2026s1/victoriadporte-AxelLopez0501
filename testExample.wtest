@@ -1,9 +1,25 @@
-import example.pepita
+import example.*
 
-describe "group of tests for pepita" {
-
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
+describe "Grupo de test"{
+  test "La disciplina inicial de Victoria es judo"{
+    assert.equals(judo, victoria.getDisciplina())
   }
 
+  test "El elemento inicial de victoria es el traje"{
+    assert.equals(trajeJudo, victoria.getElementoIndispensable())
+  }
+
+  test "El presupuesto inicial necesario para victoria si se paga 200 a los entrenadores es 8780"{
+    assert.equals(8780,victoria.getPresupuesto(200))
+  }
+
+  test "Si cambia a tenis el presupuesto pasa a ser 2415"{
+    victoria.cambiarDisciplina(tenis)
+    assert.equals(2415,victoria.getPresupuesto(200))
+  }
+
+  test "Si cambia a hockey el presupuesto pasa a ser 7340"{
+    victoria.cambiarDisciplina(hockey)
+    assert.equals(7340,victoria.getPresupuesto(200))
+  }
 }
